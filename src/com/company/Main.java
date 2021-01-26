@@ -7,10 +7,10 @@ public class Main {
 
         Flight flight = new Flight( "25","Air india", 200, 150);
         Passenger passenger = new Passenger(12, "tilak rd", "Mumbai", "Maharashtra", "Rahul", "1234567890","example@gmail.com");
-        TouristTicket touristTicket = new TouristTicket("this road, that city, that state",
-                new String[]{"sunrise point", "sunset point", "fort", "Taj Mahal", "lake"},"121", "mum","del", "27/01/2020,22.30", "27/01/2021,02.30",
+        TouristTicket touristTicket = new TouristTicket("Mg road, Delhi, Delhi",
+                new String[]{"sunrise point", "sunset point", "fort", "Taj Mahal", "lake"},"1514526789", "mum","del", "27/01/2020,22.30", "27/01/2021,02.30",
                         "A23", 5000.0F, false);
-        RegularTicket regularTicket = new RegularTicket("Food, Drinks","121", "mum","del", "27/01/2020,22.30","27/01/2021,02.30",
+        RegularTicket regularTicket = new RegularTicket("Food, Drinks","1214526733", "mum","del", "27/01/2020,22.30","27/01/2021,02.30",
                 "A23", 5000.0F, false);
 
         System.out.println("Passenger id:" + passenger.getId());
@@ -35,6 +35,7 @@ public class Main {
                         System.out.println("Thank You!");
                         break;
                 }
+                break;
             case 2:
                 System.out.println("Your hotel Address is: " + touristTicket.getHotelAddress());
                 System.out.println("Your Selected tourist locations are: ");
@@ -64,6 +65,7 @@ public class Main {
                         System.out.println("Thank you!");
                         break;
                 }
+                break;
         }
 
         if(chooseType==1) {
@@ -90,12 +92,24 @@ public class Main {
             System.out.println("Flight duration: " + touristTicket.getFlightDuration());
         }
 
+
         System.out.println("Flight Details:" );
         System.out.println(flight.getFlightDetails());
         System.out.println("Available:" + flight.checkAvailability());
 
         flight.incrementBookingCounter();
         System.out.println("Updated flight Details:" + flight.getFlightDetails());
+
+        System.out.println("Passenger Count: ");
         System.out.println(passenger.getPassengerCount());
+
+        System.out.println("Print ticket pnr for regular ticket");
+        printTicketDetails(regularTicket);
+
+        System.out.println("Print ticket pnr for Tourist ticket");
+        printTicketDetails(touristTicket);
+    }
+    public static void printTicketDetails(Ticket ticket){
+        System.out.println(ticket.getPnr());
     }
 }
