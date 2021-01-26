@@ -7,12 +7,11 @@ public class Main {
 
         Flight flight = new Flight( "25","Air india", 200, 150);
         Passenger passenger = new Passenger(12, "tilak rd", "Mumbai", "Maharashtra", "Rahul", "1234567890","example@gmail.com");
-        Ticket ticket = new Ticket( "121", "mum","del", "27/01/2020,22.30", "27/01/2021,02.30",
-                 "A23", 5000.0F, false );
         TouristTicket touristTicket = new TouristTicket("this road, that city, that state",
-                new String[]{"sunrise point", "sunset point", "fort", "Taj Mahal", "lake"});
-        RegularTicket regularTicket = new RegularTicket("Food, Drinks");
-
+                new String[]{"sunrise point", "sunset point", "fort", "Taj Mahal", "lake"},"121", "mum","del", "27/01/2020,22.30", "27/01/2021,02.30",
+                        "A23", 5000.0F, false);
+        RegularTicket regularTicket = new RegularTicket("Food, Drinks","121", "mum","del", "27/01/2020,22.30","27/01/2021,02.30",
+                "A23", 5000.0F, false);
 
         System.out.println("Passenger id:" + passenger.getId());
         System.out.println("Passenger Address:" + passenger.getAddressDetails());
@@ -67,16 +66,29 @@ public class Main {
                 }
         }
 
-        System.out.println("Ticket Details: ");
-        System.out.println(ticket.getTicketDetails());
-        System.out.println("Would you like to cancel ticket:");
-        System.out.println("1.yes 2.No");
-        int cancelTicket = input.nextInt();
-        if(cancelTicket==1) {
-            ticket.cancel();
+        if(chooseType==1) {
+            System.out.println("Ticket Details: ");
+            System.out.println(regularTicket.getTicketDetails());
+            System.out.println("Would you like to cancel ticket:");
+            System.out.println("1.yes 2.No");
+            int cancelTicket = input.nextInt();
+            if (cancelTicket == 1) {
+                regularTicket.cancel();
+            }
+            System.out.println("Check Status:" + regularTicket.checkStatus());
+            System.out.println("Flight duration: " + regularTicket.getFlightDuration());
+        }else if(chooseType==2){
+            System.out.println("Ticket Details: ");
+            System.out.println(touristTicket.getTicketDetails());
+            System.out.println("Would you like to cancel ticket:");
+            System.out.println("1.yes 2.No");
+            int cancelTicket = input.nextInt();
+            if (cancelTicket == 1) {
+                touristTicket.cancel();
+            }
+            System.out.println("Check Status:" + touristTicket.checkStatus());
+            System.out.println("Flight duration: " + touristTicket.getFlightDuration());
         }
-        System.out.println("Check Status:" + ticket.checkStatus());
-        System.out.println("Flight duration: " + ticket.getFlightDuration());
 
         System.out.println("Flight Details:" );
         System.out.println(flight.getFlightDetails());

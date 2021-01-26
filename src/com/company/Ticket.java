@@ -1,6 +1,6 @@
 package com.company;
 
-public class Ticket {
+public abstract class Ticket {
     private String pnr;
     private String from;
     private String to;
@@ -12,6 +12,18 @@ public class Ticket {
     private Passenger[] passenger;
     private Flight[] flight;
 
+    public Ticket(String pnr, String from, String to, String departureDateTime, String arrivalDateTime, String seatNo, float price, boolean cancelled, Passenger[] passenger, Flight[] flight) {
+        this.pnr = pnr;
+        this.from = from;
+        this.to = to;
+        this.departureDateTime = departureDateTime;
+        this.arrivalDateTime = arrivalDateTime;
+        this.seatNo = seatNo;
+        this.price = price;
+        this.cancelled = cancelled;
+        this.passenger = passenger;
+        this.flight = flight;
+    }
 
     public String getPnr() {
         return pnr;
