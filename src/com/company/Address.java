@@ -3,9 +3,34 @@ import java.util.Scanner;
 public class Address {
     Scanner scan = new Scanner(System.in);
     //attributes
-    String street;
-    String city;
-    String state;
+    private String street;
+    private String city;
+    private String state;
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     //constructor
     public Address(String street, String city, String state) {
         this.street = street;
@@ -37,5 +62,6 @@ public class Address {
                 System.out.println("Thank you!");
                 break;
         }
+
     }
 }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class RegularTicket {
     Scanner scan = new Scanner(System.in);
-    String specialServices;
+    private String specialServices;
 
     public RegularTicket(String specialServices) {
         this.specialServices = specialServices;
@@ -12,6 +12,10 @@ public class RegularTicket {
 
     String getSpecialServices(){
         return specialServices;
+    }
+
+    public void setSpecialServices(String specialServices) {
+        this.specialServices = specialServices;
     }
 
     void updateSpecialServices() {
