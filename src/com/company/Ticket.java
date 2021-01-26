@@ -1,5 +1,5 @@
 package com.company;
-
+//made ticket class abstract
 public abstract class Ticket {
     private String pnr;
     private String from;

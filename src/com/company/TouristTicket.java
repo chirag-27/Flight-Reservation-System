@@ -1,5 +1,5 @@
 package com.company;
-
+//extended TouristTicket to ticket
 public class TouristTicket extends Ticket {
     private String hotelAddress;
     private String[] selectedTouristLocation = new String[5];

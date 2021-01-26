@@ -3,6 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Passenger {
+    //provided idCounter attribute to keep passenger count
     private static int idCounter = 0;
 
     public static int getIdCounter() {

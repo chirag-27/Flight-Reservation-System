@@ -100,7 +100,7 @@ public class Main {
         flight.incrementBookingCounter();
         System.out.println("Updated flight Details:" + flight.getFlightDetails());
 
-        System.out.println("Passenger Count: ");
+        System.out.print("Passenger Count: ");
         System.out.println(passenger.getPassengerCount());
 
         System.out.println("Print ticket pnr for regular ticket");

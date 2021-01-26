@@ -1,5 +1,5 @@
 package com.company;
-
+//to store flight details and is also encapsulated
 public class Flight {
 
     private String flightNumber;

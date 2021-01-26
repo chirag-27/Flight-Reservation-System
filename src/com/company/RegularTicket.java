@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.Scanner;
-
+//extended RegularTicket to ticket
 public class RegularTicket extends Ticket{
     Scanner scan = new Scanner(System.in);
     private String specialServices;
